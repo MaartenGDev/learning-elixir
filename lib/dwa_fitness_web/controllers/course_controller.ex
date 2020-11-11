@@ -1,10 +1,10 @@
 defmodule DwaFitnessWeb.CourseController do
   use DwaFitnessWeb, :controller
-  alias DwaFitness.{Repo, Course}
+  alias DwaFitness.{Repo, Category, Course}
 
   def index(conn, _params) do
     conn
-    |> assign(:courses, Repo.all(Course))
+    |> assign(:categories, Repo.all(Category) |> Repo.preload(:courses))
     |> render("index.html")
   end
 

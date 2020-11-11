@@ -1,7 +1,10 @@
 # DwaFitness
 
 ## Preview
-![](./docs/home_page.png)
+![Courses page](./docs/courses_page.png)
+
+## Database
+![Database setup](./docs/database_setup.png)
 
 ## Setup
 To start your Phoenix server:

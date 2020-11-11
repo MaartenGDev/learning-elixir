@@ -6,6 +6,7 @@ defmodule DwaFitness.Course do
     field :description, :string
     field :image_url, :string
     field :name, :string
+    belongs_to :category, DwaFitness.Category
 
     timestamps()
   end
