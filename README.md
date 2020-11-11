@@ -1,7 +1,10 @@
 # DwaFitness
 
-To start your Phoenix server:
+## Preview
+![](./docs/home_page.png)
 
+## Setup
+To start your Phoenix server:
   * Install dependencies with `mix deps.get`
   * Create and migrate your database with `mix ecto.setup`
   * Install Node.js dependencies with `npm install` inside the `assets` directory

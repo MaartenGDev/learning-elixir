@@ -1,5 +1,17 @@
-/* This file is for your main application css. */
-@import "./phoenix.css";
+body {
+  margin: 0;
+  font-family: 'Helvetica', 'Arial', sans-serif;
+}
+
+/* Layout */
+.container{
+  max-width: calc(100% - 200px);
+  width: 100%;
+  margin: 0 auto;
+  @media(max-width: 800px){
+    max-width: calc(100% - 20px);
+  }
+}
 
 /* Alerts and form errors */
 .alert {
@@ -33,4 +45,61 @@
   color: #a94442;
   display: block;
   margin: -1rem 0 2rem;
+}
+
+/* Navigation header*/
+.navigation {
+  background-color: #5465C7;
+  font-weight: bold;
+  color: white;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+
+  &__list {
+    padding: 0;
+    margin: 0;
+  }
+
+  &__item {
+    padding: 20px 10px;
+    font-size: 19px;
+    list-style: none;
+    display: inline-block;
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+  }
+}
+
+.split_header{
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Page content */
+.page-hero{
+  margin-bottom: 50px;
+}
+
+.lesson-section{
+  margin-top: 40px;
+}
+
+.image-carousel {
+  overflow: auto;
+  white-space: nowrap;
+}
+
+.image-card{
+  display: inline-block;
+  width: calc(100% / 5 - 20px);
+  padding: 10px;
+
+  &__image {
+    background-size: cover;
+    border-radius: 5px;
+    width: 100%;
+    height: 200px;
+  }
 }

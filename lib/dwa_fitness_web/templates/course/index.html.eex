@@ -1,6 +1,45 @@
-<section class="phx-hero">
-  <h1><%= gettext "Welcome to %{name}!", name: "Phoenix" %></h1>
-  <p>Peace of mind from prototype to production</p>
+<section class="page-hero">
+    <h1>DWA-Fitness</h1>
+    <p>Get in shape from your home!</p>
 </section>
 
-<h1>Hello world</h1>
+<h2>Latest Courses</h2>
+
+<div class="image-carousel">
+    <%= for x <- @courses do %>
+    <div class="image-card">
+        <div class="image-card__image" style="background-image: url('<%= x.image_url %>')"></div>
+        <h2><%= x.name %></h2>
+        <p><%= x.description %></p>
+    </div>
+    <% end %>
+</div>
+
+
+<div class="lesson-section">
+    <h2>Group lessons</h2>
+
+    <div class="image-carousel">
+        <%= for x <- @courses do %>
+        <div class="image-card">
+            <div class="image-card__image" style="background-image: url('<%= x.image_url %>')"></div>
+            <h2><%= x.name %></h2>
+            <p><%= x.description %></p>
+        </div>
+        <% end %>
+    </div>
+</div>
+
+<div class="lesson-section">
+    <h2>Group lessons</h2>
+
+    <div class="image-carousel">
+        <%= for x <- @courses do %>
+        <div class="image-card">
+            <div class="image-card__image" style="background-image: url('<%= x.image_url %>')"></div>
+            <h2><%= x.name %></h2>
+            <p><%= x.description %></p>
+        </div>
+        <% end %>
+    </div>
+</div>
