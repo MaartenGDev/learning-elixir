@@ -12,7 +12,7 @@ defmodule DwaFitness.Course do
   end
 
   @doc false
-  def changeset(course, attrs) do
+  def changeset(course, attrs \\ %{}) do
     course
     |> cast(attrs, [:name, :description, :image_url])
     |> validate_required([:name, :description, :image_url])

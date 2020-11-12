@@ -18,6 +18,8 @@ defmodule DwaFitnessWeb.Router do
 
     get "/", PageController, :index
     get "/courses", CourseController, :index
+    post "/courses", CourseController, :store
+    get "/courses/create", CourseController, :create
     get "/courses/:id", CourseController, :show
   end
 

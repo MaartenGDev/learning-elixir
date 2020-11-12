@@ -1,0 +1,15 @@
+<%= form_for @changeset, Routes.course_path(@conn, :store), fn f -> %>
+<label>
+    Name: <%= text_input f, :name %>
+</label>
+
+<label>
+    Description: <%= text_input f, :description %>
+</label>
+
+<label>
+    Image Url: <%= text_input f, :image_url %>
+</label>
+
+        <%= submit "Submit" %>
+<% end %>
