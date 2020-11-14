@@ -106,4 +106,62 @@ body {
   &__description{
     white-space: normal;
   }
+
+  &__title{
+    text-decoration: none;
+    color: black;
+    display: inline-block;
+    margin: 10px 0 0 0;
+    font-weight: bold;
+
+    &:hover{
+      cursor: pointer;
+    }
+  }
+}
+
+.small-container {
+  max-width: calc(100% - 400px);
+  margin: 0 auto;
+}
+
+.btn{
+  background-color: #009688;
+  color: white;
+  border-radius: 25px;
+  padding: 12px 20px;
+  border: none;
+  display: inline-block;
+  font-size: inherit;
+  cursor: pointer;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.card {
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  border-radius: 5px;
+  margin-top: 20px;
+
+  &__header{
+    padding: 20px;
+    position: relative;
+  }
+
+  &__floating-cta {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+  }
+
+  &__title {
+    margin-top: 0;
+  }
+
+  &__video {
+    width: 100%;
+  }
+
+  &__body {
+    padding: 20px;
+  }
 }

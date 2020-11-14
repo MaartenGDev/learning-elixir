@@ -13,7 +13,13 @@ defmodule DwaFitnessWeb.CourseController do
   end
 
   def show(conn, %{"id" => id}) do
-    render(conn, "show.html", id: id)
+    conn
+    |> assign(
+         :course,
+         Repo.get(Course, id)
+         |> Repo.preload(:category)
+       )
+    |> render("show.html")
   end
 
   def create(conn, _params) do
@@ -26,7 +32,7 @@ defmodule DwaFitnessWeb.CourseController do
     changeset = Course.changeset(%Course{}, course)
 
     case Repo.insert(changeset) do
-      {:ok, user} ->
+      {:ok, _user} ->
         redirect(conn, to: "/courses")
       {:error, _changeset} ->
         redirect(conn, to: "/courses/create")

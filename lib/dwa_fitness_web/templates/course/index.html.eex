@@ -9,13 +9,13 @@
     <p><%= category.description %></p>
 
     <div class="image-carousel">
-        <%= for x <- category.courses do %>
+        <%= for course <- category.courses do %>
         <div class="image-card">
-            <div class="image-card__image" style="background-image: url('<%= x.image_url %>')"></div>
+            <div class="image-card__image" style="background-image: url('<%= course.image_url %>')"></div>
 
             <div class="image-card__description">
-                <h2><%= x.name %></h2>
-                <p><%= x.description %></p>
+                <a class="image-card__title" href="<%= Routes.course_path(@conn, :show, course.id) %>"><%= course.name %></a>
+                <p><%= course.description %></p>
             </div>
         </div>
         <% end %>

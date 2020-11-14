@@ -3,9 +3,10 @@ defmodule DwaFitness.Course do
   import Ecto.Changeset
 
   schema "courses" do
+    field :name, :string
     field :description, :string
     field :image_url, :string
-    field :name, :string
+    field :video_url, :string
     belongs_to :category, DwaFitness.Category
 
     timestamps()
@@ -14,7 +15,7 @@ defmodule DwaFitness.Course do
   @doc false
   def changeset(course, attrs \\ %{}) do
     course
-    |> cast(attrs, [:name, :description, :image_url])
-    |> validate_required([:name, :description, :image_url])
+    |> cast(attrs, [:name, :description, :image_url, :video_url])
+    |> validate_required([:name, :description, :image_url, :video_url])
   end
 end
