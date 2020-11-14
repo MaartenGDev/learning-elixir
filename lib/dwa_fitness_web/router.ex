@@ -16,7 +16,7 @@ defmodule DwaFitnessWeb.Router do
   scope "/", DwaFitnessWeb do
     pipe_through :browser
 
-    get "/", PageController, :index
+    get "/", CourseController, :index
     get "/courses", CourseController, :index
     post "/courses", CourseController, :store
     get "/courses/create", CourseController, :create
@@ -24,6 +24,7 @@ defmodule DwaFitnessWeb.Router do
     get "/courses/:id/invite", CourseController, :invite
 
     get "/videos/:id", VideoController, :show
+    get "/parties/:invite_code", PartyController, :join
   end
 
   # Other scopes may use custom stacks.

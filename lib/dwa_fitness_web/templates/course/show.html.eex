@@ -22,7 +22,7 @@
                 </div>
                 <div class="accordion__body">
                     <%= for video <- module.videos do %>
-                    <div class="accordion__row"><a href="<%= Routes.video_path(@conn, :show, video.id) %>"><%= video.name %></a> <b class="duration"><%= video.duration_in_minutes %>m</b></div>
+                    <div class="accordion__row"><a class="plain-link" href="<%= Routes.video_path(@conn, :show, video.id) %>"><%= video.name %></a> <b class="duration"><%= video.duration_in_minutes %>m</b></div>
                     <% end %>
                 </div>
             </div>

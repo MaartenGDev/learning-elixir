@@ -1,6 +1,6 @@
 defmodule DwaFitnessWeb.CourseController do
   use DwaFitnessWeb, :controller
-  alias DwaFitness.{Repo, Category, Course}
+  alias DwaFitness.{Repo, Category, Course, Party}
 
   def index(conn, _params) do
     conn
@@ -40,7 +40,10 @@ defmodule DwaFitnessWeb.CourseController do
   end
 
   def invite(conn, %{"id" => id}) do
-    invite_url = Routes.course_path(@conn, :invite, id)
+    invite_code = "aaa-bbb-ccc"
+    changeset = Party.changeset(%Party{}, %{name: "test", invite_code: invite_code})
+
+    invite_url = Routes.party_url(conn, :join, invite_code)
 
     conn
     |> assign(

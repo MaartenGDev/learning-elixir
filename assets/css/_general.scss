@@ -170,3 +170,11 @@ body {
     margin-top: 10px;
   }
 }
+
+.plain-link{
+  color: black;
+
+  &:visited {
+    color: black;
+  }
+}

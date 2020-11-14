@@ -13,7 +13,7 @@
       <section class="container split_header">
         <ul class="navigation__list">
           <li class="navigation__item">DWA Fitness</li>
-          <li class="navigation__item">Home</li>
+          <li class="navigation__item"><a href="<%= Routes.course_path(@conn, :index) %>">Home</a></li>
         </ul>
 
         <ul class="navigation__list">
