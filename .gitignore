@@ -33,5 +33,5 @@ npm-debug.log
 # this depending on your deployment strategy.
 /priv/static/
 
-assets/static/videos/
-!assets/static/videos/.gitkeep
+assets/static/video_assets/
+!assets/static/video_assets/.gitkeep

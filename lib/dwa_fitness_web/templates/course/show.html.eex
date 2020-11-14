@@ -1,18 +1,32 @@
 <div class="card small-container">
     <div class="card__header">
-        <h1 class="card__title">Course <%= @course.name %></h1>
-        <p><%= @course.category.name %></p>
-
-        <button class="btn card__floating-cta">Start exercise</button>
-    </div>
-    <video class="card__video" controls width="250">
-        <source src="<%= @course.video_url %>"
-                type="video/mp4">
-
-        Sorry, your browser doesn't support embedded videos.
-    </video>
-
-    <div class="card__body">
+        <h2 class="card__title">Course <%= @course.name %></h2>
         <p><%= @course.description %></p>
+        <p><b>Category:</b> <%= @course.category.name %></p>
+
+        <a href="<%= Routes.course_path(@conn, :invite, @course.id) %>" class="btn card__floating-cta">Learn
+            together</a>
+    </div>
+    <div class="card__body">
+        <div class="accordion">
+            <%= for module <- @course.modules do %>
+            <div class="accordion__group">
+                <div class="accordion__title">
+                    <b><%= module.name %></b>
+
+                    <svg class="accordion__arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black"
+                         width="18px" height="18px">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"/>
+                    </svg>
+                </div>
+                <div class="accordion__body">
+                    <%= for video <- module.videos do %>
+                    <div class="accordion__row"><a href="<%= Routes.video_path(@conn, :show, video.id) %>"><%= video.name %></a> <b class="duration"><%= video.duration_in_minutes %>m</b></div>
+                    <% end %>
+                </div>
+            </div>
+            <% end %>
+        </div>
     </div>
 </div>

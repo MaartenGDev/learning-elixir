@@ -6,8 +6,9 @@ defmodule DwaFitness.Course do
     field :name, :string
     field :description, :string
     field :image_url, :string
-    field :video_url, :string
+
     belongs_to :category, DwaFitness.Category
+    has_many :modules, DwaFitness.Module
 
     timestamps()
   end
@@ -15,7 +16,7 @@ defmodule DwaFitness.Course do
   @doc false
   def changeset(course, attrs \\ %{}) do
     course
-    |> cast(attrs, [:name, :description, :image_url, :video_url])
-    |> validate_required([:name, :description, :image_url, :video_url])
+    |> cast(attrs, [:name, :description, :image_url])
+    |> validate_required([:name, :description, :image_url])
   end
 end

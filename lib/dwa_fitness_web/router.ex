@@ -21,6 +21,9 @@ defmodule DwaFitnessWeb.Router do
     post "/courses", CourseController, :store
     get "/courses/create", CourseController, :create
     get "/courses/:id", CourseController, :show
+    get "/courses/:id/invite", CourseController, :invite
+
+    get "/videos/:id", VideoController, :show
   end
 
   # Other scopes may use custom stacks.

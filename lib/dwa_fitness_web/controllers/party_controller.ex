@@ -1,26 +1,6 @@
-defmodule DwaFitnessWeb.CourseController do
+defmodule DwaFitnessWeb.PartyController do
   use DwaFitnessWeb, :controller
   alias DwaFitness.{Repo, Category, Course}
-
-  def index(conn, _params) do
-    conn
-    |> assign(
-         :categories,
-         Repo.all(Category)
-         |> Repo.preload(:courses)
-       )
-    |> render("index.html")
-  end
-
-  def show(conn, %{"id" => id}) do
-    conn
-    |> assign(
-         :course,
-         Repo.get(Course, id)
-         |> Repo.preload [modules: [:videos], category: []]
-       )
-    |> render("show.html")
-  end
 
   def create(conn, _params) do
     changeset = Course.changeset(%Course{})

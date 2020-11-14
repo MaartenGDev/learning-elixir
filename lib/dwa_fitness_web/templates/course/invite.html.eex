@@ -1,0 +1,14 @@
+<div class="card small-container">
+    <div class="card__header">
+        <h2 class="card__title">Course <%= @course.name %></h2>
+        <p><%= @course.category.name %></p>
+        <p><%= @course.description %></p>
+    </div>
+    <div class="card__body">
+        <p><b>Share</b></p>
+        <p>Invite others using the following link:</p>
+        <input type="text" class="form__input" disabled="disabled" value="<%= @invite_url %>"/>
+
+        <button class="btn card__button">Start video</button>
+    </div>
+</div>

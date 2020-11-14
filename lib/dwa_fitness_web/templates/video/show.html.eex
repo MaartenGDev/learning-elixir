@@ -1,0 +1,17 @@
+<div class="card small-container">
+    <div class="card__header">
+        <h2 class="card__title"><%= @video.name %></h2>
+        <span><b>Course:</b> <%= @video.module.course.name %></span><br />
+        <span><b>Module:</b> <%= @video.module.name %></span><br />
+    </div>
+    <video class="card__video" controls width="250">
+        <source src="<%= @video.url %>"
+                type="video/mp4">
+
+        Sorry, your browser doesn't support embedded videos.
+    </video>
+
+    <div class="card__body">
+        <p><%= @video.description %></p>
+    </div>
+</div>
