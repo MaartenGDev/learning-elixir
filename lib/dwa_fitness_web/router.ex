@@ -23,7 +23,7 @@ defmodule DwaFitnessWeb.Router do
     get "/courses/:id", CourseController, :show
     get "/courses/:id/invite", CourseController, :invite
 
-    get "/videos/:id", VideoController, :show
+    get "/courses/:course_id/modules/:module_id/videos/:video_id", VideoController, :show
     get "/parties/:invite_code", PartyController, :join
   end
 

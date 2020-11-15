@@ -9,9 +9,8 @@ import "../css/app.scss"
 //
 // Import deps with the dep name or local files with a relative path, for example:
 //
-//     import {Socket} from "phoenix"
-//     import socket from "./socket"
-//
-import "phoenix_html"
+import "./socket"
+import "./party"
 
+import "phoenix_html"
 import "./accordion"

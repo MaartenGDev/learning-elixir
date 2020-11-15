@@ -1,17 +1,42 @@
-<div class="card small-container">
-    <div class="card__header">
-        <h2 class="card__title"><%= @video.name %></h2>
-        <span><b>Course:</b> <%= @video.module.course.name %></span><br />
-        <span><b>Module:</b> <%= @video.module.name %></span><br />
-    </div>
-    <video class="card__video" controls width="250">
-        <source src="<%= @video.url %>"
-                type="video/mp4">
+<div class="card" data-trigger-sync='{"course_id": <%= @course.id%>, "module_id": <%= @module_id%>, "video_id": <%= @video.id %>}' >
+    <div class="card__body card__body--no-spacing">
+        <div class="video_player">
+            <video class="video_player__video" controls width="250">
+                <source src="<%= @video.url %>"
+                        type="video/mp4">
 
-        Sorry, your browser doesn't support embedded videos.
-    </video>
+                Sorry, your browser doesn't support embedded videos.
+            </video>
 
-    <div class="card__body">
-        <p><%= @video.description %></p>
+            <div class="video_player__sidebar">
+                <div class="video_player__header">
+                    <h3><%= @course.name %></h3>
+                    <p><%= @course.description %></p>
+                </div>
+                <div class="accordion">
+                    <%= for module <- @course.modules do %>
+                    <div class="accordion__group accordion__group--active">
+                        <div class="accordion__title">
+                            <b><%= module.name %></b>
+
+                            <svg class="accordion__arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                 fill="black"
+                                 width="18px" height="18px">
+                                <path d="M0 0h24v24H0z" fill="none"/>
+                                <path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"/>
+                            </svg>
+                        </div>
+                        <div class="accordion__body">
+                            <%= for video <- module.videos do %>
+                            <div class="accordion__row <%= if video.id == @video.id do "accordion__row--active" end%>"><a class="accordion__link"
+                                                           href="<%= Routes.video_path(@conn, :show, @course.id, module.id, video.id) %>"><%= video.name %></a>
+                                <b class="duration"><%= video.duration_in_minutes %>m</b></div>
+                            <% end %>
+                        </div>
+                    </div>
+                    <% end %>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

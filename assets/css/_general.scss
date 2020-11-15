@@ -164,6 +164,10 @@ body {
 
   &__body {
     padding: 20px;
+
+    &--no-spacing {
+      padding: 0;
+    }
   }
 
   &__button{

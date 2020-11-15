@@ -8,20 +8,35 @@
 
   &__group {
     border-bottom: 1px solid grey;
+    background-color: white;
 
     &--active .accordion__body {
       display: block;
+    }
+
+    &--active .accordion__title {
+      background-color: #ececec;
+
     }
   }
   &__title {
     padding: 10px 20px;
     display: flex;
     justify-content: space-between;
-    background-color: #f8f8f8;
+    background-color: white;
+
+    &--darker {
+      background-color: #f8f8f8;
+    }
   }
   &__body {
     display: none;
     border-top: 1px solid grey;
+  }
+
+  &__link {
+    color: black;
+    text-decoration: none;
   }
 
   &__row {
@@ -30,6 +45,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    &--active *{
+      color: #2ea0d6;
+    }
 
     &:last-child {
       border-bottom: none;

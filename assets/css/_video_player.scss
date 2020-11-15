@@ -1,0 +1,16 @@
+.video_player {
+  display: flex;
+
+  &__video {
+    flex-grow: 1;
+  }
+  &__sidebar {
+    width: 20%;
+    background-color: #00897B;
+  }
+
+  &__header{
+    padding: 10px 20px;
+    color: white;
+  }
+}

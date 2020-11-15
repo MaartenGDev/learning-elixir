@@ -11,7 +11,7 @@
         <div class="accordion">
             <%= for module <- @course.modules do %>
             <div class="accordion__group">
-                <div class="accordion__title">
+                <div class="accordion__title accordion__title--darker">
                     <b><%= module.name %></b>
 
                     <svg class="accordion__arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black"
@@ -22,7 +22,7 @@
                 </div>
                 <div class="accordion__body">
                     <%= for video <- module.videos do %>
-                    <div class="accordion__row"><a class="plain-link" href="<%= Routes.video_path(@conn, :show, video.id) %>"><%= video.name %></a> <b class="duration"><%= video.duration_in_minutes %>m</b></div>
+                    <div class="accordion__row"><a class="plain-link" href="<%= Routes.video_path(@conn, :show, @course.id, module.id, video.id) %>"><%= video.name %></a> <b class="duration"><%= video.duration_in_minutes %>m</b></div>
                     <% end %>
                 </div>
             </div>

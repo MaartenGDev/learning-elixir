@@ -9,6 +9,10 @@
         <p>Invite others using the following link:</p>
         <input type="text" class="form__input" disabled="disabled" value="<%= @invite_url %>"/>
 
-        <button class="btn card__button">Start video</button>
+        <a class="btn card__button" href="<%= Routes.video_path(@conn, :show, @course.id, @next_module_id, @next_video_id) %>">Start course</a>
     </div>
 </div>
+
+<script>
+    localStorage.setItem('CURRENT_PARTY_CODE', '<%= @invite_code %>')
+</script>

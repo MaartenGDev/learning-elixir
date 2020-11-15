@@ -41,17 +41,21 @@ defmodule DwaFitnessWeb.CourseController do
 
   def invite(conn, %{"id" => id}) do
     invite_code = "aaa-bbb-ccc"
+    course = Repo.get(Course, id)
+             |> Repo.preload [modules: [:videos], category: []]
+
     changeset = Party.changeset(%Party{}, %{name: "test", invite_code: invite_code})
 
     invite_url = Routes.party_url(conn, :join, invite_code)
+    next_module_id = Enum.at(course.modules, 0).id
+    next_video_id = Enum.at(Enum.at(course.modules, 0).videos, 0).id
 
     conn
-    |> assign(
-         :course,
-         Repo.get(Course, id)
-         |> Repo.preload(:category)
-       )
+    |> assign(:course, course)
+    |> assign(:invite_code, invite_code)
     |> assign(:invite_url, invite_url)
+    |> assign(:next_module_id, next_module_id)
+    |> assign(:next_video_id, next_video_id)
     |> render("invite.html")
   end
 end

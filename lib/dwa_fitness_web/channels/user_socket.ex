@@ -3,6 +3,7 @@ defmodule DwaFitnessWeb.UserSocket do
 
   ## Channels
   # channel "room:*", DwaFitnessWeb.RoomChannel
+  channel "learning-party:*", DwaFitnessWeb.PartyChannel
 
   # Socket params are passed from the client and can
   # be used to verify and authenticate a user. After
