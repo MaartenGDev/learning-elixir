@@ -1,4 +1,4 @@
-<div class="card" data-trigger-sync='{"course_id": <%= @course.id%>, "module_id": <%= @module_id%>, "video_id": <%= @video.id %>}' >
+<div class="card" data-trigger-sync='{"type": "VIDEO_CHANGED", "course_id": <%= @course.id%>, "module_id": <%= @module_id%>, "video_id": <%= @video.id %>}' >
     <div class="card__body card__body--no-spacing">
         <div class="video_player">
             <video class="video_player__video" controls width="250">

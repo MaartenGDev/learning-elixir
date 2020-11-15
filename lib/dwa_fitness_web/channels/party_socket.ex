@@ -7,7 +7,6 @@ defmodule DwaFitnessWeb.PartyChannel do
   end
 
   def handle_in("learning-party:" <> party_id, payload, socket) do
-    Logger.info ":: Example:Broadcast receive a message!::"
     broadcast! socket, "learning-party:" <> party_id, payload
     {:noreply, socket}
   end

@@ -11,6 +11,7 @@ import "../css/app.scss"
 //
 import "./socket"
 import "./party"
+import "./auth"
 
 import "phoenix_html"
 import "./accordion"
