@@ -1,6 +1,6 @@
 <section class="page-hero">
-    <h1>DWA-Fitness</h1>
-    <p>Get in shape from your home!</p>
+    <h1>DWA-Learning</h1>
+    <p>Learn from home!</p>
 </section>
 
 <%= for category <- @categories do %>

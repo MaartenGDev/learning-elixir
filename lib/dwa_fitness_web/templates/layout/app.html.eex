@@ -4,7 +4,7 @@
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>DwaFitness · Phoenix Framework</title>
+    <title>Dwa Learning</title>
     <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/app.css") %>"/>
     <script defer type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
   </head>
@@ -12,7 +12,7 @@
     <header class="navigation">
       <section class="container split_header">
         <ul class="navigation__list">
-          <li class="navigation__item">DWA Fitness</li>
+          <li class="navigation__item">DWA Learning</li>
           <li class="navigation__item"><a href="<%= Routes.course_path(@conn, :index) %>">Home</a></li>
         </ul>
 

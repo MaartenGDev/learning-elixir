@@ -3,6 +3,16 @@
 ## Preview
 ![Courses page](./docs/courses_page.png)
 
+#### Video Modules
+![Video modules](./docs/course_view.png)
+
+#### Video player
+![Course video](./docs/course_video.png)
+
+#### Learning together
+![Learning together](./docs/learning_together.png)
+
+
 ## Database
 ![Database setup](./docs/database_setup.png)
 

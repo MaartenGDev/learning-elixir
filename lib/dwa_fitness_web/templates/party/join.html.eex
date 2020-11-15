@@ -1,0 +1,13 @@
+<div class="card small-container">
+    <div class="card__header">
+        <h2 class="card__title"><%= @party.name %></h2>
+        <p><b>Course:</b> <%= @party.course.name %></p>
+    </div>
+    <div class="card__body">
+        <p>Waiting for the host to start a video.</p>
+    </div>
+</div>
+
+<script>
+    localStorage.setItem('CURRENT_PARTY_CODE', '<%= @invite_code %>')
+</script>

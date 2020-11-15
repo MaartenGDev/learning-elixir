@@ -1,4 +1,5 @@
 defmodule DwaFitnessWeb.CourseController do
+  require Logger
   use DwaFitnessWeb, :controller
   alias DwaFitness.{Repo, Category, Course, Party}
 
@@ -40,11 +41,15 @@ defmodule DwaFitnessWeb.CourseController do
   end
 
   def invite(conn, %{"id" => id}) do
-    invite_code = "aaa-bbb-ccc"
+    invite_code = Ecto.UUID.generate
     course = Repo.get(Course, id)
              |> Repo.preload [modules: [:videos], category: []]
 
-    changeset = Party.changeset(%Party{}, %{name: "test", invite_code: invite_code})
+    current_date = DateTime.utc_now();
+    formatted_date = "#{current_date.year}/#{current_date.month}/#{current_date.day}";
+
+    changeset = Party.changeset(%Party{}, %{course_id: id, name: "Learning party " <> formatted_date, invite_code: invite_code})
+    result = Repo.insert(changeset)
 
     invite_url = Routes.party_url(conn, :join, invite_code)
     next_module_id = Enum.at(course.modules, 0).id
